@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct CurrentsNewsApp: App {
+    @StateObject var news = NewsFetcher()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NewsListView(news: news)
         }
     }
 }
