@@ -15,11 +15,7 @@ struct ImageView: View {
             AsyncImage(url: url) { phase in
                 switch phase {
                 case .empty:
-                    Color.gray
-                        .overlay(
-                            ProgressView()
-                        )
-                        .aspectRatio(3/2, contentMode: .fit)
+                    ProgressView()
                 case .success(let image):
                     image
                         .resizable()
